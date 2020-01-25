@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bus_seats_status" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e71969cd-e83c-48da-85a1-20a3e74f9172">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BusAdapter"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="SQL">
+		<![CDATA[select * from mybusdb.busrouteview]]>
+	</queryString>
+	<field name="ScheduledDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="ScheduledDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="BusNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="BusNo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="BusType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="BusType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="Seats" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Seats"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="ASeats" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ASeats"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="Reserved" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Reserved"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="RouteFrom" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RouteFrom"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="RouteTo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RouteTo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="TimeUp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TimeUp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="Fare" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Fare"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="Driver" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Driver"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<field name="Conductor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Conductor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="busrouteview"/>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="842" height="92" backcolor="#006699" uuid="3ee99434-594c-445a-8cad-98ff8e87c75c"/>
+				<staticText>
+					<reportElement x="180" y="23" width="350" height="43" forecolor="#FFFFFF" uuid="47e65ef5-0ab7-4d3a-bed5-97ba1057b0aa"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[KARAD BUS DEPOT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="650" y="46" width="180" height="20" forecolor="#FFFFFF" uuid="eedfc352-eb7f-4ea0-af42-b897546179a2"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Bus Seats Status]]></text>
+				</staticText>
+				<image>
+					<reportElement x="9" y="22" width="81" height="62" uuid="d166702b-191d-4922-a903-5b9276758ccd"/>
+					<imageExpression><![CDATA["bus.jpg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="842" height="1" forecolor="#666666" uuid="41a038e9-c6ee-4179-9892-6388f72a0620"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="232ef4e0-322b-41a0-8178-e67fa3f4eadc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3c267c5-03da-4d26-84df-c11f465700c9"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ScheduledDate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="111" y="0" width="42" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9ae62bcf-d0b8-41f0-b8fa-83a82c31e665">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9238bba-d72b-4c6f-94eb-2ccbf2fdc099"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="153" y="0" width="69" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c8d2244f-bfa5-4267-aa17-1e8521c8df48">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e6c8f4-3ac3-4d37-a490-43a6dd65816c"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BusNo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="222" y="0" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="fcb2c3c1-77ab-4d3b-aa18-39fbfcf6d733">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29043fe1-8a09-43a4-a416-e769aa5fc6a9"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BusType]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="304" y="0" width="66" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f881815b-8a3f-4529-87c5-f1f2c3b81e8f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a933419f-13fb-4e38-b8c2-4f5442aefc7f"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="68" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6ac3c46d-1d8e-46f0-ba0e-bdb392af2411">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="062e913e-6679-470d-a20e-80d51544cc51"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASeats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="438" y="0" width="62" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e26d8f58-e891-4195-87e0-26dafd37d8d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff2d6b3c-dd49-47ad-bc0f-7b56872b8a27"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reserved]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="500" y="0" width="70" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="423655a5-3535-4bf6-b707-53f5988bf327">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6a608acb-47db-4fec-9eb8-d49a852e45e5"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RouteFrom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="570" y="0" width="64" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="aa00c635-defb-4d07-8d28-7fcbc7430df7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f46bdc9-dc83-4f80-81be-a46b60dcaf7f"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RouteTo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="634" y="0" width="42" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3fea1142-89f5-4123-a4e1-2b5f3e685362">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1df034db-a0ba-4c4d-b253-dad515f79470"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TimeUp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="676" y="0" width="42" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c6ed74de-b2b2-4845-b24e-253416fd1bdf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d56a45dc-d5aa-4f48-82b0-ce2e9636014e"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fare]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="718" y="0" width="52" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a0347240-c050-42f7-90e1-bb1d389099ce">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca849822-2dc5-4dc2-ad32-a43bdef4cbc3"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Driver]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="770" y="0" width="52" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9c506e4a-a468-48c6-94aa-7fe3120c3c82">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a9b8107-55ed-4c43-91cc-eaa6bac95901"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Conductor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="20" width="822" height="1" uuid="54305770-33f4-4f5e-a11e-692100f8f3a9"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="111" height="20" uuid="d2f0f183-7349-4a23-a75e-0aa3f4742e12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3c267c5-03da-4d26-84df-c11f465700c9"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ScheduledDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="111" y="0" width="42" height="20" uuid="a490f12e-0c65-4ba4-85a1-1605f211402b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9238bba-d72b-4c6f-94eb-2ccbf2fdc099"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="153" y="0" width="69" height="20" uuid="87d45fc2-51b8-4d0b-b80a-4740797e9bcf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17e6c8f4-3ac3-4d37-a490-43a6dd65816c"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BusNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="222" y="0" width="82" height="20" uuid="30f9e5ae-152b-438d-b571-3b5b230f6d7b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29043fe1-8a09-43a4-a416-e769aa5fc6a9"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BusType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="304" y="0" width="66" height="20" uuid="d70c757f-fd21-46cb-90b2-26781c038b84">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a933419f-13fb-4e38-b8c2-4f5442aefc7f"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Seats}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="370" y="0" width="68" height="20" uuid="850c0483-68c9-48c2-a045-1c456f415dcd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="062e913e-6679-470d-a20e-80d51544cc51"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASeats}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="438" y="0" width="62" height="20" uuid="99e0935f-5ff0-49d8-884c-95036772d836">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff2d6b3c-dd49-47ad-bc0f-7b56872b8a27"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Reserved}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="500" y="0" width="70" height="20" uuid="e68e6b9f-b230-4b0f-94b7-9608e2ba0160">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6a608acb-47db-4fec-9eb8-d49a852e45e5"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RouteFrom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="570" y="0" width="64" height="20" uuid="fffe775a-99ee-40b9-b99a-1fd68f56aece">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f46bdc9-dc83-4f80-81be-a46b60dcaf7f"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RouteTo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="634" y="0" width="42" height="20" uuid="ea6e25bb-3e17-4038-bd68-754832793d85">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1df034db-a0ba-4c4d-b253-dad515f79470"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TimeUp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="676" y="0" width="42" height="20" uuid="a2946409-9941-45c9-b133-02c5125c6bf3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d56a45dc-d5aa-4f48-82b0-ce2e9636014e"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fare}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="718" y="0" width="52" height="20" uuid="41f49681-54d8-4e5d-9328-ed434ec1d88f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca849822-2dc5-4dc2-ad32-a43bdef4cbc3"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Driver}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="770" y="0" width="52" height="20" uuid="78e31adb-3ec0-4e14-b993-23120dadc8fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a9b8107-55ed-4c43-91cc-eaa6bac95901"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Conductor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="780" height="13" backcolor="#E6E6E6" uuid="f0f6963c-3f77-48b7-a42c-e41d76056e90"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="780" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="463504d8-e7b5-460f-9def-20ff0e1ca335"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="85484c93-6525-441f-b5c0-1eae1e9b56e7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

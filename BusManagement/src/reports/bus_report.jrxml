@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bus_report" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8afabf89-7e58-4b04-afe4-99526c2c15b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BusAdapter"/>
+	<queryString language="SQL">
+		<![CDATA[select * from mybusdb.bus]]>
+	</queryString>
+	<field name="BusNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="BusNo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bus"/>
+	</field>
+	<field name="BusType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="BusType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bus"/>
+	</field>
+	<field name="Seats" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Seats"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bus"/>
+	</field>
+	<field name="ASeats" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ASeats"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bus"/>
+	</field>
+	<field name="Reserved" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Reserved"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bus"/>
+	</field>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#35AEF0" uuid="e9ab513b-a0d5-4e3a-a362-6b443d1ea8e1"/>
+				<staticText>
+					<reportElement x="90" y="20" width="350" height="43" forecolor="#FFFFFF" uuid="c6e719ea-c7be-4cf9-9ce6-3932feb41f21"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[KARAD BUS DEPOT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="76516782-f6e5-4e6f-843e-ef2499f80b1e"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[AVAILABLE BUS LIST]]></text>
+				</staticText>
+				<image>
+					<reportElement x="9" y="22" width="68" height="62" uuid="48235e34-a5e9-4755-8d73-d7902f5a4c42"/>
+					<imageExpression><![CDATA["bus.jpg"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="fd6da698-cf65-4d6e-b2da-23ae1f811bee"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="110" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="20705285-ee44-4f68-95c0-85bf980385cb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1bbcbc22-f789-490b-9ae3-d7c7ac11ab5b"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bus No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="0" width="170" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dcf8bdc2-9c2c-4716-9e6e-f7edf07a8bfd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f1ef341-3785-49c6-a18f-bc8356fd2936"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bus Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="0" width="80" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ceea0c97-2e40-4a98-9f95-d779d430bd8f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9074dc3-32ac-460e-b667-16956f82c41d"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No of Seats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="360" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="fd7aabe1-bd57-4281-878d-06fe5c018ce8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9074dc3-32ac-460e-b667-16956f82c41d"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avail of Seats]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="95" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="304726fd-3d29-4c06-83a5-bfb0ef8703d7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9074dc3-32ac-460e-b667-16956f82c41d"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resv. Seats]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="53ee9ed7-5bad-45e9-981b-ba1c7a3b9de2"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="110" height="20" uuid="1cfd0a60-6f41-4491-8145-c5d47ea72d62">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1bbcbc22-f789-490b-9ae3-d7c7ac11ab5b"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BusNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="110" y="0" width="170" height="20" uuid="bceb430e-a524-4d9e-a30b-7b99e6e6d4ed">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f1ef341-3785-49c6-a18f-bc8356fd2936"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BusType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="280" y="0" width="80" height="20" uuid="2d9c9b14-0ce3-4270-997a-42bee010782d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9074dc3-32ac-460e-b667-16956f82c41d"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Seats}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="360" y="0" width="100" height="20" uuid="925bca82-5ebf-4ae8-a082-9c36b91e1ec4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9074dc3-32ac-460e-b667-16956f82c41d"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASeats}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="460" y="-1" width="100" height="20" uuid="628748fb-a6bc-4c4b-9a36-2b68d0695b5e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9074dc3-32ac-460e-b667-16956f82c41d"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Reserved}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="62f28f82-1407-40ed-8b67-e4ef7588ff8e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="3506fa8c-ef38-4861-bec9-3a8eb8df356b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="a5ad8082-73c6-4b27-a09f-e882671ecdf4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
