@@ -5,6 +5,7 @@
  */
 package com.forms;
 
+
 import com.db.DataAccess;
 import com.db.Utility;
 import java.awt.Color;
@@ -31,7 +32,9 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public LoginForm() {
         
-        initComponents();        
+        initComponents(); 
+        txtuser.setText("admin");
+        txtpass.setText("admin");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,7 +62,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(204, 0, 51));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText(" Login Form");
+        jLabel1.setText(" Login ");
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 660, 69);
@@ -113,7 +116,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         btncancel.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btncancel.setForeground(new java.awt.Color(204, 0, 0));
-        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Load.png"))); // NOI18N
+        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Delete_32x32.png"))); // NOI18N
         btncancel.setText("Cancel");
         btncancel.setToolTipText("Cancel Login Form and Exit from System");
         btncancel.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +125,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncancel);
-        btncancel.setBounds(520, 195, 105, 40);
+        btncancel.setBounds(520, 195, 113, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bus3.jpg"))); // NOI18N
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204)));

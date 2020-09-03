@@ -84,24 +84,24 @@ public class BusInfoForm extends javax.swing.JFrame {
             }
         });
         
-        txtseats2.setInputVerifier(new InputVerifier() {
-            @Override
-            public boolean verify(JComponent input) {
-              String name=txtseats2.getText();
-              if(name.equals("")){
-               lblerror.setText("No of Reserved Seats cannot be left empty");
-               return false;
-               }else{
-                  if(name.matches("^\\d+$")){  // ^RegExPattern$
-                  lblerror.setText("");
-                  return true;
-                  }else{
-                      lblerror.setText("No of Reserved Seats must be integer number");
-                      return false;
-                  }
-              }
-            }
-        });
+//        txtseats2.setInputVerifier(new InputVerifier() {
+//            @Override
+//            public boolean verify(JComponent input) {
+//              String name=txtseats2.getText();
+//              if(name.equals("")){
+//               lblerror.setText("No of Reserved Seats cannot be left empty");
+//               return false;
+//               }else{
+//                  if(name.matches("^\\d+$")){  // ^RegExPattern$
+//                  lblerror.setText("");
+//                  return true;
+//                  }else{
+//                      lblerror.setText("No of Reserved Seats must be integer number");
+//                      return false;
+//                  }
+//              }
+//            }
+//        });
     }
 
     /**
@@ -133,8 +133,6 @@ public class BusInfoForm extends javax.swing.JFrame {
         lblerror = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtseats1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        txtseats2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Bus Information Form");
@@ -249,11 +247,6 @@ public class BusInfoForm extends javax.swing.JFrame {
 
         txtseats1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel7.setText("Reserved Seats");
-
-        txtseats2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -280,21 +273,18 @@ public class BusInfoForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 134, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(3, 137, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(2, 2, 2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(44, 44, 44))
-                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 134, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel5))
-                                .addGap(38, 38, 38))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(2, 2, 2)))
+                                .addGap(38, 38, 38)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnsave, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,8 +293,7 @@ public class BusInfoForm extends javax.swing.JFrame {
                             .addComponent(txtno, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbtype, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtseats, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtseats1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtseats2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtseats1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24)))
                 .addContainerGap())
         );
@@ -330,11 +319,7 @@ public class BusInfoForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtseats1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtseats2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnsave)
                     .addComponent(btnreset))
@@ -344,7 +329,7 @@ public class BusInfoForm extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnedit)
@@ -362,7 +347,7 @@ public class BusInfoForm extends javax.swing.JFrame {
         String type=cmbtype.getSelectedItem()+"";
         String seats=txtseats.getText();
         String seats1=txtseats1.getText();
-        String seats2=txtseats2.getText();
+        String seats2="0";
         
         String opr=btnsave.getText().toLowerCase();
         if(opr.equals("save"))
@@ -384,7 +369,7 @@ public class BusInfoForm extends javax.swing.JFrame {
         txtno.setText("");
         txtseats.setText("");
         txtseats1.setText("");
-        txtseats2.setText("");
+        //txtseats2.setText("");
         btnsave.setText("Save");
         txtno.requestFocus();
     }//GEN-LAST:event_btnresetActionPerformed
@@ -406,12 +391,12 @@ public class BusInfoForm extends javax.swing.JFrame {
         String type=table1.getValueAt(rowindex, 1)+"";
         String seats=table1.getValueAt(rowindex, 2)+"";
         String seats1=table1.getValueAt(rowindex, 3)+"";
-        String seats2=table1.getValueAt(rowindex, 4)+"";
+      //  String seats2=table1.getValueAt(rowindex, 4)+"";
         txtno.setText(no);
         cmbtype.setSelectedItem(type);
         txtseats.setText(seats);
         txtseats1.setText(seats1);
-        txtseats2.setText(seats2);
+       // txtseats2.setText(seats2);
         btnsave.setText("Update");
         txtno.setEditable(true);
         cmbtype.requestFocus();
@@ -480,7 +465,6 @@ public class BusInfoForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblerror;
     private javax.swing.JTable table1;
@@ -488,6 +472,5 @@ public class BusInfoForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtno;
     private javax.swing.JTextField txtseats;
     private javax.swing.JTextField txtseats1;
-    private javax.swing.JTextField txtseats2;
     // End of variables declaration//GEN-END:variables
 }

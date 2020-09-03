@@ -21,6 +21,9 @@ import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  *
@@ -38,12 +41,17 @@ public class BusBookingForm extends javax.swing.JFrame {
     double fare2=0;
     String routeid="";
     String busno="";
+    String id1;
+    int seatno1;
     /**
      * Creates new form ItemForm
      */
     public BusBookingForm() {
         
         initComponents();
+//        ResultSet rs1 = db.getRows("select * from BusRouteView");
+//        System.out.println(rs1.get);
+        System.out.println(Utility.getCurrentDateF("dd-MM-yyyy"));
         dt=(DefaultTableModel)table2.getModel();
         db.fillTable(table1, "select * from BusRouteView");        
         db.fillCombo(cmbid, "select * from RouteInfo", "Id", "Id");
@@ -508,33 +516,75 @@ public class BusBookingForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtidActionPerformed
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-        // Save      
-        
-        String id=txtid.getText();        
-        String bdate=txtbdate.getDate().format(DateTimeFormatter.ISO_DATE);
-        String jdate=txtjdate.getDate().format(DateTimeFormatter.ISO_DATE);
-        String tfare=txtfare.getText();        
-        
-        if(txtbdate.getDate().compareTo(txtjdate.getDate())>0)
-        {
-            JOptionPane.showMessageDialog(this, "Journery Date must be equal to greater than booking date");
-            return;
+        try {
+            // Save
+            
+            String id=txtid.getText();
+            String bdate=txtbdate.getDate().format(DateTimeFormatter.ISO_DATE);
+            String jdate=txtjdate.getDate().format(DateTimeFormatter.ISO_DATE);
+            String tfare=txtfare.getText();
+            
+           
+            
+            
+            
+            
+            if (bdate.compareTo(Utility.getCurrentDate()) < 0)
+            {
+                JOptionPane.showMessageDialog(this, "INVALID BOOKING DATE SELECTION");
+                return;
+            }
+            
+            if(txtbdate.getDate().compareTo(txtjdate.getDate())>0)
+            {
+                JOptionPane.showMessageDialog(this, "Journery Date must be equal to greater than booking date");
+                return;
+            }
+            System.out.println(txtbdate.getDate());
+            ResultSet rs2=db.getRows("select * from BusRouteView where Id=?",id1 );
+            rs2.next();
+            int rsv = Integer.parseInt(rs2.getString("ASeats"));
+            seatno1 = Integer.parseInt(rs2.getString("Seats"));
+            
+            
+            
+            if(rsv <= 0)
+            {
+                JOptionPane.showMessageDialog(this, "RESERVATION FULL");
+                return;
+            }
+            
+//        if(txtbdate.getDate().compareTo(Utility.getCurrentDate())>0)
+//        {
+//            JOptionPane.showMessageDialog(this, "Journery Date must be equal to greater than booking date");
+//            return;
+//        }
+
+
+int tkno=db.executeId("Insert into Booking (BookingDate,JourneyDate,RouteId,TotalFare) values(?,?,?,?)", bdate,jdate,routeid,tfare);
+for(int i=0;i<table2.getRowCount();i++)
+{
+    String seatno=table2.getValueAt(i, 0)+"";
+    String name=table2.getValueAt(i, 1)+"";
+    String age=table2.getValueAt(i, 2)+"";
+    String gender=table2.getValueAt(i, 3)+"";
+    if (Integer.parseInt(seatno) > seatno1 )
+    {
+        JOptionPane.showMessageDialog(this,"Seat Number outOf range");
+        return;
+    }
+    db.execute("Insert into BookingDetails values(?,?,?,?,?)", tkno+"",seatno,name,age,gender);            
+}
+
+           
+db.execute("Update Bus set ASeats=ASeats-"+table2.getRowCount()+",Reserved=Seats-ASeats where BusNo='"+busno+"'");
+
+JOptionPane.showMessageDialog(this, "Booking Done Successfully");
+db.fillTable(table1, "select * from BusRouteView");
+btnreset.doClick();
+        } catch (SQLException ex) {
+            Logger.getLogger(BusBookingForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        int tkno=db.executeId("Insert into Booking (BookingDate,JourneyDate,RouteId,TotalFare) values(?,?,?,?)", bdate,jdate,routeid,tfare);
-        for(int i=0;i<table2.getRowCount();i++)
-        {
-            String seatno=table2.getValueAt(i, 0)+"";
-            String name=table2.getValueAt(i, 1)+"";
-            String age=table2.getValueAt(i, 2)+"";
-            String gender=table2.getValueAt(i, 3)+"";
-            db.execute("Insert into BookingDetails values(?,?,?,?,?)", tkno+"",seatno,name,age,gender);            
-        }
-        db.execute("Update Bus set ASeats=ASeats-"+table2.getRowCount()+",Reserved=Seats-ASeats where BusNo='"+busno+"'");
-        
-        JOptionPane.showMessageDialog(this, "Booking Done Successfully");  
-        db.fillTable(table1, "select * from BusRouteView");        
-        btnreset.doClick();
     }//GEN-LAST:event_btnsaveActionPerformed
 
     private void btnresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnresetActionPerformed
@@ -554,7 +604,8 @@ public class BusBookingForm extends javax.swing.JFrame {
         if(rowindex!=-1)
         {
         String id=table1.getValueAt(rowindex, 1)+"";
-        edit(id);        
+        edit(id);   
+        id1=id;
         }
         else
         {

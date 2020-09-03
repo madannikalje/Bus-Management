@@ -20,7 +20,8 @@ public class SplashForm extends javax.swing.JFrame {
      */
     public SplashForm() {
         initComponents();
-        t=new Timer(30, e->{
+        
+        t=new Timer(5, e->{
             pb.setValue(i);
             i++;
             if(i>105){

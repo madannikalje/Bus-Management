@@ -27,7 +27,8 @@ public class MainForm extends javax.swing.JFrame {
      */
     public MainForm() {
         initComponents();
-        //Create an object of ImageIcon class        
+        //Create an object of ImageIcon class  
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         ImageIcon obj=new ImageIcon("src/images/icon.jpg");
         //Get Image class object from ImageIcon class obj
         Image img=obj.getImage();
@@ -138,7 +139,7 @@ public class MainForm extends javax.swing.JFrame {
                 .addComponent(lbldate, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbltext, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(493, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,8 +153,12 @@ public class MainForm extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
+        jMenuBar1.setBorder(new javax.swing.border.MatteBorder(null));
+
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pencil.png"))); // NOI18N
         jMenu1.setText("Master Entries");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu1.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Building-icon.png"))); // NOI18N
         jMenuItem12.setText("Bus Depot Information");
@@ -189,6 +194,8 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bus6.png"))); // NOI18N
         jMenu2.setText("Bus Scheduling");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu2.setMargin(new java.awt.Insets(0, 0, 0, 20));
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu2MouseClicked(evt);
@@ -203,6 +210,8 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Notes_32x32.png"))); // NOI18N
         jMenu3.setText("Bus Booking");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu3.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BOPermission_32x32.png"))); // NOI18N
         jMenuItem5.setText("New Booking");
@@ -227,6 +236,9 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
         jMenu4.setText("Search");
+        jMenu4.setContentAreaFilled(false);
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu4.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Send_32x32.png"))); // NOI18N
         jMenuItem3.setText("Search Fare");
@@ -252,6 +264,8 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Report_32x32.png"))); // NOI18N
         jMenu5.setText("Reports");
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu5.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
         jMenuItem38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Print_32x32.png"))); // NOI18N
         jMenuItem38.setText("Employee List");
@@ -306,6 +320,8 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pivot_32x32.png"))); // NOI18N
         jMenu6.setText(" Utilities");
+        jMenu6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu6.setMargin(new java.awt.Insets(0, 0, 0, 20));
         jMenu6.add(jSeparator15);
 
         jMenuItem23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Backup.jpg"))); // NOI18N
@@ -424,6 +440,8 @@ public class MainForm extends javax.swing.JFrame {
 
         jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Log Out.png"))); // NOI18N
         jMenu8.setText("Exit");
+        jMenu8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenu8.setMargin(new java.awt.Insets(0, 0, 0, 20));
 
         jMenuItem25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Log-Out-icon.png"))); // NOI18N
         jMenuItem25.setText(" Logout");
